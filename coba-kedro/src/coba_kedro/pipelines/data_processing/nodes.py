@@ -5,6 +5,9 @@ def _is_true(x: pd.Series) -> pd.Series:
     return x == "t"
 
 
+def csv_read(path: str) -> pd.DataFrame:
+    return pd.read_csv(path)
+
 def _parse_percentage(x: pd.Series) -> pd.Series:
     x = x.str.replace("%", "")
     x = x.astype(float) / 100
